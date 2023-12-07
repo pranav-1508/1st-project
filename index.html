@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Multi-Page Form</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<div id="formContainer">
+    <div class="formPage" id="page1">
+        <h2>Basic Info</h2>
+        <form id="formPage1">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <button type="button" onclick="nextPage()">Fitness Test</button>
+        </form>
+    </div>
+
+    <div class="formPage" id="page2" style="display: none;">
+        <h2>Fitness-Test</h2>
+        <form id="formPage2">
+            <label for="option1">Running in Km:</label>
+            <select id="option1" name="option1" required>
+                <option value="" selected>--Select--</option>
+                <option value="1">1Km</option>
+                <option value="2">2Km</option>
+                <option value="5">5km</option>
+            </select>
+
+            <label for="option2">Pushup in Count</label>
+            <select id="option2" name="option2" required>
+                <option value="" selected>--Select--</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+            <button type="button" onclick="previousPage()">Previous</button>
+        </form>
+    </div>
+
+    <div id="result">
+        <h2>Result</h2>
+        <p id="resultText">Total points you get: <span id="totalPoints"></span></p>
+        <p>Your Weightage average: <span id="weightageAverage"></span></p>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
